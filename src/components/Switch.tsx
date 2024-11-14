@@ -16,7 +16,7 @@ const SwitchStyle = styled.div<SwitchProps>`
     justify-content: space-between;
     width: ${(props) => props.width};
     background: ${(props) => props.background || '#fff'};
-    padding: 20px 13px;
+    padding: 15px 13px;
     border-radius: 0.8rem;
 `;
 

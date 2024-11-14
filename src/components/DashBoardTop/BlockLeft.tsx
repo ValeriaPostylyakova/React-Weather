@@ -30,7 +30,7 @@ const BlockLeft = () => {
                 content="center"
                 gap="0.4rem"
             >
-                <Title size="45px" weight={700}>
+                <Title size="55px" weight={700}>
                     24°
                 </Title>
                 <Subtitle color="#000" margin="5rem">

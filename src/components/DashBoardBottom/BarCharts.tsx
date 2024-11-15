@@ -1,4 +1,6 @@
-import { BarChart, Bar, XAxis, Tooltip } from 'recharts';
+import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import BlockInfo from '../DashBoard/BlockInfo.tsx';
+import Subtitle from '../Subtitle.tsx';
 
 const data = [
     {
@@ -54,23 +56,35 @@ const data = [
 
 const BarCharts = () => {
     return (
-        <BarChart
-            width={600}
-            height={300}
-            data={data}
-            margin={{
-                top: 20,
-                right: 30,
-                left: 20,
-                bottom: 5,
-            }}
-        >
-            <XAxis dataKey="name" />
-            <Tooltip />
-            <Bar dataKey="pv" stackId="a" fill="#0c294f" />
-            <Bar dataKey="uv" stackId="a" fill="#4b89cb" />
-            <Bar dataKey="ww" stackId="a" fill="#ccddf3" />
-        </BarChart>
+        <BlockInfo padding="20px" width="35%">
+            <Subtitle color="#000" margin="1rem" weight={700}>
+                Average Daily Rainfall
+            </Subtitle>
+            <ResponsiveContainer
+                width="100%"
+                height="100%"
+                minHeight="300px"
+                maxHeight={300}
+            >
+                <BarChart
+                    width={450}
+                    height={300}
+                    data={data}
+                    margin={{
+                        top: 20,
+                        right: 30,
+                        left: 20,
+                        bottom: 5,
+                    }}
+                >
+                    <XAxis dataKey="name" />
+                    <Tooltip />
+                    <Bar dataKey="pv" stackId="a" fill="#0c294f" />
+                    <Bar dataKey="uv" stackId="a" fill="#4b89cb" />
+                    <Bar dataKey="ww" stackId="a" fill="#ccddf3" />
+                </BarChart>
+            </ResponsiveContainer>
+        </BlockInfo>
     );
 };
 

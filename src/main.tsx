@@ -1,7 +1,9 @@
 import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import DashBoard from './page/DashBoard.tsx';
 import { createGlobalStyle } from 'styled-components';
-import { StrictMode } from 'react';
+import Map from './page/Map.tsx';
+import Calendar from './page/Calendar.tsx';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -16,11 +18,33 @@ const GlobalStyle = createGlobalStyle`
     ul, ul li {
         list-style: none;
     }
+
+    a {
+        color: inherit; 
+        text-decoration: none; 
+        background-color: transparent;
+        cursor: pointer;
+    }
 `;
 
+const router = createBrowserRouter([
+    {
+        path: '/React-Weather/',
+        element: <DashBoard />,
+    },
+    {
+        path: '/React-Weather/map',
+        element: <Map />,
+    },
+    {
+        path: '/React-Weather/calendar',
+        element: <Calendar />,
+    },
+]);
+
 createRoot(document.getElementById('root')!).render(
-    <StrictMode>
+    <>
+        <RouterProvider router={router} />
         <GlobalStyle />
-        <App />
-    </StrictMode>
+    </>
 );

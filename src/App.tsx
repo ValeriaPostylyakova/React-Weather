@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import DashBoard from './page/DashBoard.tsx';
-import Sidebar from './components/Sidebar/Sidebar.tsx';
-import Header from './components/DashBoard/Header.tsx';
 
 const Wrapper = styled.div`
     position: relative;
@@ -11,7 +9,7 @@ const Wrapper = styled.div`
     background-color: #fff;
 `;
 
-const MainWrapper = styled.main`
+export const MainWrapper = styled.main`
     position: absolute;
     top: 130px;
     right: 0;
@@ -22,11 +20,7 @@ const MainWrapper = styled.main`
 const App = () => {
     return (
         <Wrapper>
-            <Sidebar />
-            <Header />
-            <MainWrapper>
-                <DashBoard />
-            </MainWrapper>
+            <DashBoard />
         </Wrapper>
     );
 };

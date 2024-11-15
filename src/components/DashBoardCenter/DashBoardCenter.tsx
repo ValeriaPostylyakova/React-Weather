@@ -15,7 +15,7 @@ const DashBoardCenter = () => {
                 {[...new Array(7)].map((_, index: number) => (
                     <BlockInfo key={index} width="15%" padding="30px 20px">
                         <BlockInfoRight
-                            imageUrl="/rain.png"
+                            imageUrl="/React-Weather/rain.png"
                             title="Sun"
                             subtitle="24°"
                         />

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container } from '../DashBoard/Header.tsx';
+import { Container } from '../Header/Header.tsx';
 import Flex from '../Flex.tsx';
 import Text from '../../Text.tsx';
 import List from './List.tsx';
@@ -28,8 +28,8 @@ const Sidebar = () => {
             <Container duration="column" align="start" padding="0 20px 0 20px">
                 <Logo>
                     <Flex align="center" gap="0.5rem">
-                        <img src="/logo.png" alt="logo" />
-                        <Text size="21px" color="#4b89cb">
+                        <img src={'/React-Weather/logo.png'} alt="logo" />
+                        <Text size="21px" color="#4b89cb" colorHover="#4b89cb">
                             Weatherni
                         </Text>
                     </Flex>

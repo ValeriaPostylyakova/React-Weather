@@ -22,28 +22,28 @@ const BlockRight = () => {
             <GridContainer>
                 <BlockInfo width="392px" padding="30px">
                     <BlockInfoRight
-                        imageUrl="/wind.svg"
+                        imageUrl="/React-Weather//wind.svg"
                         title="Wind Speed"
                         subtitle="12 km/h"
                     />
                 </BlockInfo>
                 <BlockInfo width="392px" padding="30px">
                     <BlockInfoRight
-                        imageUrl="/rain.png"
+                        imageUrl="/React-Weather//rain.png"
                         title="Rain Chanse"
                         subtitle="24%"
                     />
                 </BlockInfo>
                 <BlockInfo width="392px" padding="30px">
                     <BlockInfoRight
-                        imageUrl="/rain.png"
+                        imageUrl="/React-Weather/rain.png"
                         title="Pressure"
                         subtitle="720 hpa"
                     />
                 </BlockInfo>
                 <BlockInfo width="392px" padding="30px">
                     <BlockInfoRight
-                        imageUrl="/wind.svg"
+                        imageUrl="/React-Weather/wind.svg"
                         title="Uv Index"
                         subtitle="2"
                     />

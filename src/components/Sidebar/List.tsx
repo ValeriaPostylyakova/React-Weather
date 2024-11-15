@@ -3,6 +3,7 @@ import { TbSmartHome } from 'react-icons/tb';
 import { TbChartTreemap } from 'react-icons/tb';
 import { RxCalendar } from 'react-icons/rx';
 import Text from '../../Text.tsx';
+import { Link } from 'react-router-dom';
 
 export const ListItem = styled.li`
     width: 100%;
@@ -27,24 +28,30 @@ export const ListItem = styled.li`
 const List = () => {
     return (
         <ul style={{ width: '100%' }}>
-            <ListItem>
-                <TbSmartHome style={{ width: '27px', height: '27px' }} />
-                <Text size="17px" colorHover="#4b89cb">
-                    Dashboard
-                </Text>
-            </ListItem>
-            <ListItem>
-                <TbChartTreemap style={{ width: '27px', height: '27px' }} />
-                <Text size="17px" colorHover="#4b89cb">
-                    Map
-                </Text>
-            </ListItem>
-            <ListItem>
-                <RxCalendar style={{ width: '27px', height: '27px' }} />
-                <Text size="17px" colorHover="#4b89cb">
-                    Calendar
-                </Text>
-            </ListItem>
+            <Link to="/React-Weather/">
+                <ListItem>
+                    <TbSmartHome style={{ width: '27px', height: '27px' }} />
+                    <Text size="17px" colorHover="#4b89cb">
+                        Dashboard
+                    </Text>
+                </ListItem>
+            </Link>
+            <Link to="/React-Weather/map">
+                <ListItem>
+                    <TbChartTreemap style={{ width: '27px', height: '27px' }} />
+                    <Text size="17px" colorHover="#4b89cb">
+                        Map
+                    </Text>
+                </ListItem>
+            </Link>
+            <Link to="/React-Weather/calendar">
+                <ListItem>
+                    <RxCalendar style={{ width: '27px', height: '27px' }} />
+                    <Text size="17px" colorHover="#4b89cb">
+                        Calendar
+                    </Text>
+                </ListItem>
+            </Link>
         </ul>
     );
 };

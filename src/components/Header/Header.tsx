@@ -3,8 +3,10 @@ import Flex, { FlexProps } from '../Flex.tsx';
 import Title from '../Title.tsx';
 import Subtitle from '../Subtitle.tsx';
 import Search from './Search.tsx';
-import { IoIosNotificationsOutline } from 'react-icons/io';
-import { CiUser } from 'react-icons/ci';
+import { FiSun } from 'react-icons/fi';
+import { FiMoon } from 'react-icons/fi';
+import { useEffect, useState } from 'react';
+import { getDate } from '../../hooks/useDate.ts';
 
 const HeaderStyle = styled.header`
     min-height: 130px;
@@ -35,18 +37,27 @@ const Button = styled.button`
 `;
 
 const Header = () => {
+    const [dateTop, setDateTop] = useState<string>('');
+    const [dateBottom, setDateBottom] = useState<string>('');
+
+    useEffect(() => {
+        const { year, date, day, month, month2 } = getDate();
+        setDateTop(String(month + ' ' + year));
+        setDateBottom(`${day}, ${month2} ${date}, ${year}`);
+    }, []);
+
     return (
         <HeaderStyle>
             <Container>
                 <Flex duration="column" gap="0.5rem">
-                    <Title size="25px">January 2022</Title>
-                    <Subtitle>Thursday, Jan 22, 2024</Subtitle>
+                    <Title size="25px">{dateTop}</Title>
+                    <Subtitle>{dateBottom}</Subtitle>
                 </Flex>
                 <Flex gap="1.5rem">
                     <Search />
                     <Flex align="center">
                         <Button>
-                            <IoIosNotificationsOutline
+                            <FiSun
                                 style={{
                                     width: '30px',
                                     height: '30px',
@@ -55,7 +66,7 @@ const Header = () => {
                             />
                         </Button>
                         <Button>
-                            <CiUser
+                            <FiMoon
                                 style={{
                                     width: '30px',
                                     height: '30px',
